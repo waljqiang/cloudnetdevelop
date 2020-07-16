@@ -1,0 +1,9 @@
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} ^/cloudnetlot/$
+    RewriteRule (.*) /cloudnetlot/frontend [L]
+    RewriteCond %{REQUEST_URI} ^/cloudnetlot/backend/(.*)$
+    RewriteRule ^backend/(.*)$ /cloudnetlot/backend/public/$1 [P]
+</IfModule>

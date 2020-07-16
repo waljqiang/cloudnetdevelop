@@ -1,0 +1,20 @@
+{
+    "name": "waljqiang/captcha",
+    "description": "captcha library for php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "waljqiang",
+            "email": "zql185@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "psr-4":{
+            "Nova\\Captcha\\": "src/"
+        }
+    }
+}
