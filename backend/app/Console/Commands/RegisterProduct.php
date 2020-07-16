@@ -72,14 +72,12 @@ class RegisterProduct extends Command
             $this->error('The appid or appsecret is not incorrect');
             exit(-1);
         }
-
-        $hashprtids = app("Hashprtids");
         
         $products = $user->products;
         if(!$products->isEmpty()){
             $this->error('The product is exists');
             $product = $products->get(0);
-            $productID = $hashprtids->encodeHash($product->id . $product->created_at);
+            $productID = encodePrtID($product->id,$product->created_at);
             $this->line("<comment>product Id:{$productID}</comment>");
             exit(-1);
         }else{
@@ -93,7 +91,7 @@ class RegisterProduct extends Command
                 "created_at" => $time,
                 "updated_at" => $time
             ]);
-            $productID = $hashprtids->encodeHash($product->id . $product->created_at);
+            $productID = encodePrtID($product->id,$product->created_at);
             /*$rs = $user->username == config("mqtt.username") ? true : $this->aclRepository->addAll([
                 [//允许用户发布设备上行主题
                     "allow" => 1,

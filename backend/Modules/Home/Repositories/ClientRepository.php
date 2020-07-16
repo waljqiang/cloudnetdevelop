@@ -2,11 +2,11 @@
 namespace Modules\Home\Repositories;
 
 use App\Repositories\BaseRepository;
-use Modules\Home\Entities\Product;
+use Modules\Home\Entities\Client;
 
-class ProductRepository extends BaseRepository{
+class ClientRepository extends BaseRepository{
 	public function model(){
-		return Product::class;
+		return Client::class;
 	}
 
 }

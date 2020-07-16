@@ -117,4 +117,10 @@ return [
     "COMMID_ARRAY" => 600400171,//命令ID必须是数组
     "COMMID_DISTINCT" => 600400172,//命令ID不能重复
     "COMM_NO" => 600400173,//命令不存在
+    
+    "PRT_REQUIRED" => 600500100,//产品ID必须
+    "PRTID_ERROR" => 600500101,//产品ID错误
+    "PRODUCT_NO" => 600500102,//产品不存在
+    "CLT_REQUIRED" => 600500103,//客户端ID必须
+    "CLT_ERROR" => 600500104,//客户端ID错误 
 ];

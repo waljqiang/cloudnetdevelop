@@ -55,7 +55,6 @@ CREATE TABLE `cnldev_client` (
   `uid` bigint(20) UNSIGNED NOT NULL COMMENT '用户ID',
   `prtid` bigint(20) UNSIGNED NOT NULL COMMENT '产品ID',
   `mac` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '设备MAC地址',
-  `cltid` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '客户端ID',
   `created_at` bigint(13) UNSIGNED DEFAULT NULL COMMENT '创建时间',
   `updated_at` bigint(13) UNSIGNED DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE

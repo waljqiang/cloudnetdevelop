@@ -30,7 +30,7 @@ class HashcltidsServiceProvider extends ServiceProvider{
      */
     public function register(){
         $this->app->singleton('Hashcltids', function ($app) {
-            return new Hashids(config('hashids.salt'),18,config('hashids.alphabet'),'clt',config('hashids.enable'));
+            return new Hashids('client',27,'abcdefghijklmnopqrstuvwxyz','clt',true);
         });
     }
 
