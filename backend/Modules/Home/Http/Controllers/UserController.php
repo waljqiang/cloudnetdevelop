@@ -19,4 +19,9 @@ class UserController extends Controller{
 		return $this->userService->register($request->all());
 	}
 
+	//申请成为开发者
+	public function develop(UserRequest $request){
+		
+	}
+
 }
