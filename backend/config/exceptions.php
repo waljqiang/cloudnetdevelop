@@ -122,5 +122,14 @@ return [
     "PRTID_ERROR" => 600500101,//产品ID错误
     "PRODUCT_NO" => 600500102,//产品不存在
     "CLT_REQUIRED" => 600500103,//客户端ID必须
-    "CLT_ERROR" => 600500104,//客户端ID错误 
+    "CLT_ERROR" => 600500104,//客户端ID错误
+    "NAME_REQUIRED" => 600500105,//姓名必须
+    "NAME_REGX" => 600500106,//用户姓名不合法
+    "IDCARD_REQUIRED" => 600500107,//用户身份号码必须
+    "IDCARD_ERROR" => 600500108,//用户身份号码不合法
+    "COMPANY_REGEX" => 600500109,//公司名称不合法
+    "COMPANY_DES_REQUIRED" => 600500110,//公司描述必须
+    "COMPANY_DES_REQUIRED" => 600500111,//公司描述过长
+    "COMPANY_CODE_REQUIRED" => 600500112,//企业统一信用码必须
+    "COMPANY_CODE_ERROR" => 600500113,//企业统一信用码不合法
 ];

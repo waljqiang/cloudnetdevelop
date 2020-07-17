@@ -21,7 +21,7 @@ class UserController extends Controller{
 
 	//申请成为开发者
 	public function develop(UserRequest $request){
-		
+		return $this->userService->develop($request->user(),$request->all());
 	}
 
 }

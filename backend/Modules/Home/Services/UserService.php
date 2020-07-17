@@ -4,11 +4,6 @@ namespace Modules\Home\Services;
 use App\Services\BaseService;
 use Carbon\Carbon;
 use Modules\Home\Repositories\UserRepository;
-use Modules\Home\Repositories\UserCacheRepository;
-use Modules\Home\Repositories\WorkgroupRepository;
-use Mail;
-use Illuminate\Support\Facades\Hash;
-use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\DB;
 
 class UserService extends BaseService{
@@ -34,6 +29,22 @@ class UserService extends BaseService{
 		];
 		$user = $this->userRepository->makeModel()->create($data);
 		return ["uid" => $user->id];
+	}
+
+	//申请成为开发者
+	public function develop($user,$params){
+		$rs = $this->userRepository->save([
+			"name" => array_get($params,"name"),
+			"idcard" => array_get($params,"idcard"),
+			"enterprise" => array_get($params,"enterprise"),
+			"enterprise_des" => array_get($params,"enterprise_des"),
+			"enterprisecode" => array_get($params,"enterprise_code"),
+			"updated_at" => Carbon::now()->timestamp
+		],["id" => $user->id]);
+		if(!$rs){
+			throw new \Exception("Failure",config("exceptions.MYSQL_EXEC_ERROR"));
+		}
+		return [];
 	}
 
 }

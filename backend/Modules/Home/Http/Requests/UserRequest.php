@@ -12,6 +12,13 @@ class UserRequest extends FormRequest{
     		"phone" => "required|phone:phonecode",
     		"email" => "required|email"
     	],
+        "develop" => [
+            "name" => "required|regex:/^[\x{4e00}-\x{9fa5}a-zA-Z0-9_]{1,20}$/iuD",
+            "idcard" => "required|alpha_num|max:50",
+            "enterprise" => "required|regex:/^[\x{4e00}-\x{9fa5}a-zA-Z0-9_]{1,100}$/iuD",
+            "enterprise_des" => "required|max:1000",
+            "enterprise_code" => "required|alpha_num|max:50",
+        ],
     ];
 	/**
      * Get the validation rules that apply to the request.
@@ -63,6 +70,18 @@ class UserRequest extends FormRequest{
             "email.required" => config("exceptions.EMAIL_REQUIRED"),
             "email.required_without" => config("exceptions.PARAMS_INVALID"),
         	"email.email" => config("exceptions.EMAIL"),
+            "name.required" => config("exceptions.NAME_REQUIRED"),
+            "name.required" => config("exceptions.NAME_REGX"),
+            "idcard.required" => config("exceptions.IDCARD_REQUIRED"),
+            "idcard.alpha_num" => config("exceptions.IDCARD_ERROR"),
+            "idcard.max" => config("exceptions.IDCARD_ERROR"),
+            "enterprise.required" => config("exceptions.COMPANY_REQUIRED"),
+            "enterprise.regex" => config("exceptions.COMPANY_REGEX"),
+            "enterprise_des.required" => config("exceptions.COMPANY_DES_REQUIRED"),
+            "enterprise_des.max" => config("exceptions.COMPANY_DES_REQUIRED"),
+            "enterprisecode.required" => config("exceptions.COMPANY_CODE_REQUIRED"),
+            "enterprisecode.alpha_num" => config("exceptions.COMPANY_CODE_ERROR"),
+            "enterprisecode.max" => config("exceptions.COMPANY_CODE_ERROR"),
         ];
     }
 
