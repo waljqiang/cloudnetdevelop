@@ -12,7 +12,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\DB;
 
 class UserService extends BaseService{
-	const ENCRYPTKEY = 'cloudnetlot';
+	const ENCRYPTKEY = 'cloudnetlotdevelop';
 	private $userRepository;
 
 	public function __construct(UserRepository $userRepository){

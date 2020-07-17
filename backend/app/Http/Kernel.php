@@ -44,7 +44,7 @@ class Kernel extends HttpKernel
             'handle-response',     
         ],
 
-        'cloudnetlot' => [
+        'cloudnetlotdevlop' => [
             'throttle:60,1',
             'bindings',
             'handle-response',

@@ -34,9 +34,5 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-    'auth' => [
-        'domain' => env('AUTH_DOMAIN'),
-        'client' => '/cloudnetlot/backend/open/client/token/check'
-    ]
 
 ];

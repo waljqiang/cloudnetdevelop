@@ -23,7 +23,7 @@ class AuthController extends Controller{
      */
     public function getToken(AccessTokenRequest $request){
         $credentials = request(["username","password"]);
-        $token = auth("cloudnetlot")->attempt($credentials,true);
+        $token = auth("cloudnetlotdevelop")->attempt($credentials,true);
         return $this->responseWithToken($token,$this->getRefreshToken($token));
     }
 
@@ -37,7 +37,7 @@ class AuthController extends Controller{
     public function refreshToken(AccessTokenRequest $request){
     	$params = $request->all();
         $refreshToken = array_get($params,"refresh_token");
-        $token = auth("cloudnetlot")->getToken();
+        $token = auth("cloudnetlotdevelop")->getToken();
         $refreshTokenDecode = base64_decode($refreshToken);
         $timeLen = 25 + strlen(config("hashids.header"));
         $refreshTokenBody = substr($refreshTokenDecode,0,-$timeLen);
@@ -51,11 +51,11 @@ class AuthController extends Controller{
             throw new \Exception("Refresh token is expired",config("exceptions.REFRESH_TOKEN_EXPIRES"));
         }
 
-        return $this->responseWithToken(auth("cloudnetlot")->refresh(),$refreshToken);
+        return $this->responseWithToken(auth("cloudnetlotdevelop")->refresh(),$refreshToken);
     }
 
     public function destroyToken(Request $request){
-        auth("cloudnetlot")->invalidate();
+        auth("cloudnetlotdevelop")->invalidate();
         return [];
     }
 
@@ -71,7 +71,7 @@ class AuthController extends Controller{
     	return [
     		"access_token" => $token,
     		"token_type" => "Bearer",
-    		"expires_in" => auth("cloudnetlot")->factory()->getTTL() * 60,
+    		"expires_in" => auth("cloudnetlotdevelop")->factory()->getTTL() * 60,
     		"refresh_token" => $refreshToken,
     		"refresh_expires_in" => config("jwt.refresh_ttl")
     	];

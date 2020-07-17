@@ -6,7 +6,7 @@ Route::group(["middleware" => ["throttle:60,1","handle-response"],"namespace" =>
 });
 
 //认证相关
-Route::group(["prefix" => "auth","middleware" => ["cloudnetlot","auth:cloudnetlot"],"namespace" => "Modules\Home\Http\Controllers"],function(){
+Route::group(["prefix" => "auth","middleware" => ["cloudnetlotdevelop","auth:cloudnetlotdevelop"],"namespace" => "Modules\Home\Http\Controllers"],function(){
 	Route::post("token/refresh","AuthController@refreshToken");//刷新access_token
 	Route::get("token/destroy","AuthController@destroyToken");//销毁token
 });

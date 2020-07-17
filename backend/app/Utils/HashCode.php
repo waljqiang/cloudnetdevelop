@@ -14,7 +14,7 @@ class HashCode{
      * @author magus.lee
      */
 
-    public static function encrypt($string,$key = 'cloudnetlot', $expiry = 0,$ckey_length = 6){
+    public static function encrypt($string,$key = 'cloudnetlotdevelop', $expiry = 0,$ckey_length = 6){
         $check_key = strrev(strtolower($key));
         $keya = md5(substr(md5($key), 0, 16));
         $keyb = md5(substr(md5($key), 16, 16));
@@ -59,7 +59,7 @@ class HashCode{
      * @return string
      * @author magus.lee
      */
-    public static function decrypt($string,$key = 'cloudnetlot',$ckey_length = 6){
+    public static function decrypt($string,$key = 'cloudnetlotdevlop',$ckey_length = 6){
         $check_key = strrev(strtolower($key));
         $string = substr($string,strlen($check_key));
 

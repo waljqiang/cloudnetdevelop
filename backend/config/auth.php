@@ -44,25 +44,9 @@ return [
             'driver' => 'token',
             'provider' => 'users'
         ],
-        'cloudnetlot' => [
+        'cloudnetlotdevelop' => [
             'driver' => 'jwt',
-            'provider' => 'cloudnetlot'
-        ],
-        'cloudnetlotadmin' => [
-            'driver' => 'jwt',
-            'provider' => 'admin'
-        ],
-        'open' => [
-            'driver' => 'jwt',
-            'provider' => 'cloudnetlot'
-        ],
-        'openadmin' => [
-            'driver' => 'jwt',
-            'provider' => 'admin'
-        ],
-        'openapi' => [
-            'driver' => 'password',
-            'provider' => 'cloudnetlot'
+            'provider' => 'cloudnetlotdevelop'
         ]
     ],
 
@@ -88,13 +72,9 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-        'cloudnetlot' => [
+        'cloudnetlotdevelop' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
-        ],
-        'admin' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
         ]
     ],
 
